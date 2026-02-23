@@ -1,6 +1,6 @@
 {
   "name": "@xpell/3d",
-  "version": "2.0.0-alpha.0",
+  "version": "2.0.0-alpha.1",
   "description": "Xpell UI 3D JS Framework",
   "publishConfig": {
     "access": "public"
