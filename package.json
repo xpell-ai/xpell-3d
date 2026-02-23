@@ -1,0 +1,67 @@
+{
+  "name": "@xpell/3d",
+  "version": "2.0.0-alpha.0",
+  "description": "Xpell UI 3D JS Framework",
+  "publishConfig": {
+    "access": "public"
+  },
+  "files": [
+    "dist",
+    "docs",
+    "README.md",
+    "LICENSE",
+    "CHANGELOG.md"
+  ],
+  "type": "module",
+  "main": "./dist/index.js",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "sideEffects": false,
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js",
+      "require": "./dist/index.cjs",
+      "default": "./dist/index.js"
+    },
+    "./package.json": "./package.json"
+  },
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build && pnpm run build:types",
+    "build:types": "tsc --project tsconfig.types.json",
+    "docs": "typedoc --options ./typedoc.json --tsconfig ./",
+    "publish-alpha-next": "pnpm version prerelease --preid=alpha  && pnpm publish --tag alpha"
+  },
+  "author": "Tamir Fridman <fridman.tamir@gmail.com>",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/xpell-ai/xpell-3d.git"
+  },
+  "peerDependencies": {
+    "three": "^0.182.0",
+    "cannon-es": "^0.20.0",
+    "three-to-cannon": "^5.0.2",
+    "@xpell/core": "^2.0.0-alpha",
+    "@xpell/ui": "^2.0.0-alpha"
+  },
+  "peerDependenciesMeta": {
+    "cannon-es": {
+      "optional": true
+    },
+    "three-to-cannon": {
+      "optional": true
+    }
+  },
+  "devDependencies": {
+    "@xpell/core": "^2.0.0-alpha",
+    "@xpell/ui": "^2.0.0-alpha",
+    "@types/three": "^0.182.0",
+    "cannon-es": "^0.20.0",
+    "three": "^0.182.0",
+    "three-to-cannon": "^5.0.2",
+    "vite": "^7.3.1",
+    "vite-plugin-dts": "^3.9.1"
+  }
+}
