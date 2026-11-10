@@ -1,6 +1,6 @@
 {
   "name": "@xpell/3d",
-  "version": "2.0.0-alpha.1",
+  "version": "2.0.7",
   "description": "Xpell UI 3D JS Framework",
   "publishConfig": {
     "access": "public"
@@ -33,6 +33,48 @@
     "docs": "typedoc --options ./typedoc.json --tsconfig ./",
     "publish-alpha-next": "pnpm version prerelease --preid=alpha  && pnpm publish --tag alpha"
   },
+  "xpell": {
+    "_tests": [
+      {
+        "_id": "xpell-3d.script.build",
+        "_title": "@xpell/3d build verification",
+        "_owner": "@xpell/3d",
+        "_suite": "xpell-3d.package",
+        "_scope": "package",
+        "_runtime": "node",
+        "_description": "Build-only verification because no package test script exists.",
+        "_profiles": ["xpell-3d.package"],
+        "_tags": ["package", "build"],
+        "_entry": {
+          "_type": "build",
+          "_script": "build"
+        }
+      },
+      {
+        "_id": "xpell-3d.package.check",
+        "_title": "@xpell/3d package metadata check",
+        "_owner": "@xpell/3d",
+        "_suite": "xpell-3d.package",
+        "_scope": "package",
+        "_runtime": "node",
+        "_description": "Verifies package metadata and declared local entries without publishing or network checks.",
+        "_profiles": ["xpell-3d.package"],
+        "_tags": ["package-check"],
+        "_entry": {
+          "_type": "package-check",
+          "_check": "package"
+        }
+      }
+    ],
+    "_test_profiles": [
+      {
+        "_id": "xpell-3d.package",
+        "_title": "@xpell/3d package verification",
+        "_includes": ["xpell-3d.*"],
+        "_tags": ["package", "build-only"]
+      }
+    ]
+  },
   "author": "Tamir Fridman <fridman.tamir@gmail.com>",
   "license": "MIT",
   "repository": {
@@ -43,8 +85,8 @@
     "three": "^0.182.0",
     "cannon-es": "^0.20.0",
     "three-to-cannon": "^5.0.2",
-    "@xpell/core": "^2.0.0-alpha",
-    "@xpell/ui": "^2.0.0-alpha"
+    "@xpell/core": "^2.0.7",
+    "@xpell/ui": "^2.0.7"
   },
   "peerDependenciesMeta": {
     "cannon-es": {
@@ -55,8 +97,8 @@
     }
   },
   "devDependencies": {
-    "@xpell/core": "^2.0.0-alpha",
-    "@xpell/ui": "^2.0.0-alpha",
+    "@xpell/core": "^2.0.7",
+    "@xpell/ui": "^2.0.7",
     "@types/three": "^0.182.0",
     "cannon-es": "^0.20.0",
     "three": "^0.182.0",
