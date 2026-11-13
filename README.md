@@ -1,5 +1,28 @@
 # @xpell/3d
 
+## 2.0.8 release candidate
+
+Target publication date: **13 November 2026**; this candidate has not been published.
+Use the coordinated 2.0.8 runtime dependencies. See [CHANGELOG](./CHANGELOG.md)
+for package changes and qualification limits; [LICENSE](./LICENSE) contains the MIT terms.
+
+## TypeScript browser compatibility (2.0.8)
+
+Use **TypeScript 5.9.3** for browser consumers importing `@xpell/3d` in this
+release. The qualified profile uses `strict: true`, `skipLibCheck: false`,
+Bundler module resolution and the `ES2022`, `DOM` and `DOM.Iterable` libraries,
+with `@types/three@0.182.0` and `@webgpu/types@0.1.68`.
+
+The default DOM-library profile in **TypeScript 7.0.2 is unsupported for these
+3D imports**: its WebGPU declarations overlap with the supplemental WebGPU
+types pulled in by Three.js typings. The strict check produces 182 declaration
+diagnostics. Do not rely on `skipLibCheck` to establish compatibility.
+
+Separate TypeScript 7.0.2 server/NodeNext and UI/Dashboard/File Service browser
+checks without 3D pass. Those results do not extend TS7 support to this 3D
+profile. This policy changes no runtime API or dependency constraints; newer
+compiler/type combinations require their own qualification.
+
 Xpell 2 Alpha --- Spatial Runtime Layer
 
 `@xpell/3d` is the 3D execution layer of the Xpell 2 platform.

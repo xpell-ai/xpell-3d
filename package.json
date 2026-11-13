@@ -1,6 +1,6 @@
 {
   "name": "@xpell/3d",
-  "version": "2.0.7",
+  "version": "2.0.8",
   "description": "Xpell UI 3D JS Framework",
   "publishConfig": {
     "access": "public"
@@ -43,8 +43,13 @@
         "_scope": "package",
         "_runtime": "node",
         "_description": "Build-only verification because no package test script exists.",
-        "_profiles": ["xpell-3d.package"],
-        "_tags": ["package", "build"],
+        "_profiles": [
+          "xpell-3d.package"
+        ],
+        "_tags": [
+          "package",
+          "build"
+        ],
         "_entry": {
           "_type": "build",
           "_script": "build"
@@ -58,8 +63,12 @@
         "_scope": "package",
         "_runtime": "node",
         "_description": "Verifies package metadata and declared local entries without publishing or network checks.",
-        "_profiles": ["xpell-3d.package"],
-        "_tags": ["package-check"],
+        "_profiles": [
+          "xpell-3d.package"
+        ],
+        "_tags": [
+          "package-check"
+        ],
         "_entry": {
           "_type": "package-check",
           "_check": "package"
@@ -70,8 +79,13 @@
       {
         "_id": "xpell-3d.package",
         "_title": "@xpell/3d package verification",
-        "_includes": ["xpell-3d.*"],
-        "_tags": ["package", "build-only"]
+        "_includes": [
+          "xpell-3d.*"
+        ],
+        "_tags": [
+          "package",
+          "build-only"
+        ]
       }
     ]
   },
@@ -85,24 +99,17 @@
     "three": "^0.182.0",
     "cannon-es": "^0.20.0",
     "three-to-cannon": "^5.0.2",
-    "@xpell/core": "^2.0.7",
-    "@xpell/ui": "^2.0.7"
-  },
-  "peerDependenciesMeta": {
-    "cannon-es": {
-      "optional": true
-    },
-    "three-to-cannon": {
-      "optional": true
-    }
+    "@xpell/core": "^2.0.8",
+    "@xpell/ui": "^2.0.8"
   },
   "devDependencies": {
-    "@xpell/core": "^2.0.7",
-    "@xpell/ui": "^2.0.7",
+    "@xpell/core": "workspace:*",
+    "@xpell/ui": "workspace:*",
     "@types/three": "^0.182.0",
     "cannon-es": "^0.20.0",
     "three": "^0.182.0",
     "three-to-cannon": "^5.0.2",
+    "typescript": "5.9.3",
     "vite": "^7.3.1",
     "vite-plugin-dts": "^3.9.1"
   }
